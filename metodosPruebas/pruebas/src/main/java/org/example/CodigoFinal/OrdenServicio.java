@@ -7,6 +7,7 @@ public class OrdenServicio {
     private Servicio servicio;
     private Tecnico tecnico;
     private Vivienda vivienda;
+    private EstadoServicio estado;
     private ArrayList<Material>listaMateriales;
 
     public OrdenServicio(String numero, Servicio servicio,
@@ -17,6 +18,7 @@ public class OrdenServicio {
         this.tecnico = tecnico;
         this.vivienda = vivienda;
         this.listaMateriales = new ArrayList<>();
+        estado=EstadoServicio.PENDIENTE;
     }
 
     public String getNumero() {
@@ -58,6 +60,19 @@ public class OrdenServicio {
     public void setListaMateriales(ArrayList<Material> listaMateriales) {
         this.listaMateriales = listaMateriales;
     }
+
+    public EstadoServicio getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoServicio estado) {
+        this.estado = estado;
+    }
+    public void actualizarEstado(EstadoServicio nuevoEstado){
+        estado=nuevoEstado;
+
+    }
+
     public void agregarMaterial(Material material) {
 
         listaMateriales.add(material);
