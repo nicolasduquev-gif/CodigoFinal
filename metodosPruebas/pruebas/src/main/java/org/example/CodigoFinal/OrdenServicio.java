@@ -8,6 +8,7 @@ public class OrdenServicio {
     private Tecnico tecnico;
     private Vivienda vivienda;
     private EstadoServicio estado;
+    private String numeroOrdenServicio;
     private ArrayList<Material>listaMateriales;
 
     public OrdenServicio(String numero, Servicio servicio,
@@ -81,6 +82,9 @@ public class OrdenServicio {
     public double calcularCostoTotal() {
 
         return servicio.calcularCosto();
+    }
+    public String getNumeroOrdenServicio(){
+        return numeroOrdenServicio;
     }
 
     public void mostrarInformacion() {

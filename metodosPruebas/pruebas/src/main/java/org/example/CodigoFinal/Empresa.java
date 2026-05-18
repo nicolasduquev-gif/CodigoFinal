@@ -58,19 +58,20 @@ package org.example.CodigoFinal;
         }
 
         //Obtener servicios de una viviedna
-
-        public void obtenerServiciosVivienda(String direccion) {
+        public ArrayList<OrdenServicio> obtenerServiciosVivienda(String direccion) {
+            ArrayList<OrdenServicio> servicios = new ArrayList<>();
             for (OrdenServicio orden : ordenes) {
                 if (orden.getVivienda().direccion().equalsIgnoreCase(direccion)) {
-
-                    orden.mostrarInformacion();
+                    servicios.add(orden);
                 }
             }
+            return servicios;
         }
+
         //Actualizar estado
         public void actualizarEstadoServicio(String numeroOrden, EstadoServicio nuevoEstado) {
             for (OrdenServicio orden : ordenes) {
-                if (orden.getServicio().equals(numeroOrden)) {
+                if (orden.getNumeroOrdenServicio().equals(numeroOrden)) {
                     orden.actualizarEstado(nuevoEstado);
                 }
             }
